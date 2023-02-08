@@ -33,6 +33,3 @@ JSDOM.fromFile(in_filename).then(dom => {
     // Serialize the updated dom and write back to the file
     fs.writeFileSync(out_filename, dom.serialize());
 });
-
-
-
