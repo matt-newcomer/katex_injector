@@ -1,3 +1,8 @@
+var config = {
+    wrapping_tag: "div",
+    latex_class: "math-display-block"
+}
+
 const fs = require('fs');
 const katex = require('katex');
 const jsdom = require("jsdom");
@@ -16,7 +21,7 @@ JSDOM.fromFile(in_filename).then(dom => {
         from occurring because the latter's return value updates when the DOM is changed. 
         This creates a situation where KaTeX adds KaTeX elements which are then passed to KaTeX...
     */
-    let equations = dom.window.document.querySelectorAll("div.math-display-block");
+    let equations = dom.window.document.querySelectorAll(config.wrapping_tag + "." + config.latex_class);
 
     for (let i = 0; i < equations.length; i++) {
         // Get the text (KaTeX) of the div
