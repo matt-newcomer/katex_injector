@@ -1,5 +1,5 @@
 var config = {
-    wrapping_tag: "div",
+    wrapping_tag: "span",
     latex_class: "math-display-block"
 }
 
